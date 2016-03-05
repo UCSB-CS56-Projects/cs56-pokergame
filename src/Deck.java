@@ -35,16 +35,6 @@ public class Deck {
 	}
 	
 	/**
-		Adds all of the cards in the hand to the discard pile.
-		@param hand the hand to be discarded
-	*/
-	
-	public void addToDiscardPile(Hand hand){
-		for(Card c:hand)
-			discardPile.add(c);
-	}
-	
-	/**
 		Returns activeDeck.
 	*/
 	public ArrayList<Card> getActiveDeck(){
@@ -52,15 +42,17 @@ public class Deck {
 	}
 	
 	/**
-		Returns a Hand of 5 random Cards.
+	Deals a specified number of cards to the hand and returns the hand	
+	@param hand the hand to add the cards to
+	@param numToAdd the number of cards to add to the hand 
 	*/
-	public Hand dealCards(){
-		Hand hand=new Hand();
-		for(int i=0;i<5;i++)
+	public Hand dealCards(Hand hand, int numToAdd){
+		for(int i=0;i<numToAdd;i++)
 		{
 			int randomNum=(int)(Math.random()*(cardsLeft));
 			Card drawnCard=this.getActiveDeck().get(randomNum);
 			activeDeck.remove(drawnCard);
+			discardPile.add(drawnCard);
 			hand.add(drawnCard);
 			cardsLeft--;
 		}
@@ -71,8 +63,11 @@ public class Deck {
 		Adds all of the Cards in discardPile to activeDeck. 
 	*/
 	public void reShuffle(){
-		for(Card c:discardPile)
+	    for(Card c:discardPile){
 			activeDeck.add(c);
+			cardsLeft++;
+	    }
+	    discardPile = new ArrayList<Card>();
 	}
 	
 	
