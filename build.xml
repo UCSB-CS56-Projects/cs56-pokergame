@@ -24,7 +24,7 @@
 	<javac srcdir="src" destdir="build" includeantruntime="false" debug="true" debuglevel="lines,vars,source">
 	<classpath>                                                                                                                              
          <pathelement location="build"/> 
-         <pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/> 
+         <pathelement location="./lib/junit-4.8.2.jar"/> 
      </classpath> 
 	</javac>
 </target> 
@@ -57,7 +57,7 @@
 	<javadoc destdir="javadoc" author="true" version="true" use="true">
 		<fileset dir="src" includes="**/*.java"/>
 		<classpath>
-			<pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/>
+			<pathelement location="./lib/junit-4.8.2.jar"/>
 		</classpath>
 	</javadoc>
 <!-- delete the old javadoc -->
@@ -98,7 +98,7 @@ Note: this only does the chmod command on the javadoc subdirectory and its conte
  <target name="test" depends="compile" description="test the Hand class">
 	<junit haltonerror="no" haltonfailure="no">
        <classpath>
-         <pathelement location="/cs/faculty/pconrad/public_html/cs56/lib/junit-4.8.2.jar"/>
+         <pathelement location="./lib/junit-4.8.2.jar"/>
          <pathelement location="build"/>
        </classpath>
 	 <batchtest fork="yes">
