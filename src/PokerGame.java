@@ -200,17 +200,16 @@ public class PokerGame {
                    
                 }
 		for(int i=0;i<player1.size();i++)
-			player1Panel.add(new JLabel(getCardImage(new Card(0, "S"))));
-	      
+			player1Panel.add(new JLabel(getCardImage(player1.get(i)))); 
 		for(int i=0;i<player2.size();i++)
-			player2Panel.add(new JLabel(getCardImage(new Card(0, "S"))));
+			player1Panel.add(new JLabel(getCardImage(player2.get(i)))); 
 		if(playerHands.size() >= 3){
 		    for(int i=0;i<player3.size();i++)
-			player3Panel.add(new JLabel(getCardImage(new Card(0, "S"))));
+			player1Panel.add(new JLabel(getCardImage(player3.get(i)))); 
 	        }
 		if(playerHands.size() == 4){
 		    for(int i=0;i<player4.size();i++)
-			player4Panel.add(new JLabel(getCardImage(new Card(0, "S"))));
+			player1Panel.add(new JLabel(getCardImage(player4.get(i)))); 
 		}
 		
 		//add labels to all the panels
